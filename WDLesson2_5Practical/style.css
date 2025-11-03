@@ -31,9 +31,9 @@ body{
                  apply some other type of styling.
 */
 #secondGallery img:hover{
-    opacity:0.5;
+    transform:rotate(13deg);
 }
 /* Challenge 14: Change the transition for all elements to 1 second */
 body{
-    transition: width 1s;
+    transition: 1s;
 }
