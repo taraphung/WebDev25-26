@@ -1,15 +1,34 @@
 /* Challenge 2: Use w3SchoolsMockUp.png to help you write the necessary CSS rules.
    Hint: Remember all the fundamental CSS rules when working with flexboxes */
 
-   div{
-      display:flex;
-   }
-   #title{
-      justify-content:center;
-   }
-
-.nav{
-   background-color:green;
-   color:white;
+.container{
+   display:flex;
+}
+   
+#banner p{
    flex:1;
+}
+
+nav a{
+   color:white;
+   background-color:green;
+   flex:1;
+}
+
+#sidebar{
+   flex-direction:column;
+   flex:1;
+}
+
+#main, #sample{
+   justify-content:center;
+   align-items:center;
+   flex:3;
+}
+
+#footer p{
+   flex:1;
+   text-align:center;
+   color:white;
+   background-color:green;
 }
