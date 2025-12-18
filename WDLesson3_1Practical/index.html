@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- WD Lesson 3.1: 
+     How can we add interactions to a web page? -->
+
+<!-- Resources 
+     https://www.w3schools.com/js/default.asp
+-->
+<html>
+  <head>
+    <title>WD Lesson 3.1 Practical</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+
+
+    </style>
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <!-- Challenge 0: Create a <div> and give it a class of container and center.  Inside the <div> add an <h1> with the text "Event Listener"-->
+      <div class="container center">
+        <h1>Event Listener</h1>
+      </div>
+
+    <!-- Challenge 1: Give the <div> below a class of "container" -->
+    <div class="container">
+      <!-- Challenge 2: Add three images of your choice. -->
+       <img src="https://cdn.omlet.com/images/originals/breed_abyssinian_cat.jpg" onclick="alert('cat')">
+       <img src="https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41558-018-0332-5/MediaObjects/41558_2018_332_Figa_HTML.png" onclick="alert('snowman')">
+       <img src="https://static01.nyt.com/images/2024/01/24/multimedia/ND-Mochi-hkpl/ND-Mochi-hkpl-threeByTwoLargeAt2X.jpg" onclick="alert('mochi')">
+      <!-- Challenge 3: Add an event listener to each of the images above in order to display an appropriate message about the image 
+           using an alert when user clicks on the image.  
+       -->
+       <!-- Challenges 4 - 7 are in style.css-->
+    </div>
+    <hr>
+    <div class="translations">
+      <!-- Challenge 8: Choose three words in another language. Place each word in a <span>.  Give each <span> a class of button
+           When the user clicks on the word in the <span> offer the English translation in an alert.   -->
+            <span class="button" onclick="alert('Happy')">Feliz</span>
+            <span class="button" onclick="alert('Music')">Música</span>
+            <span class="button" onclick="alert('Three')">Tres</span>
+
+      
+
+    </div>
+  </body>
+</html>
