@@ -30,7 +30,8 @@ html,body{
 .gallery img{
   height:200px;
   border-radius:10px;
-  box-shadow:2px 2px 2px black;
+  border:purple 2px solid;
+  box-shadow:4px 4px 4px black;
 }
 .alternate{ 
   background-color:blue;
