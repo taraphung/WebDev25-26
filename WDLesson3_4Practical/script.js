@@ -32,5 +32,4 @@ girlspan.innerHTML = girl;
 
   /* Task 5: Set the display property of the element with an id of "story" to 'block' */
 
-
 }
