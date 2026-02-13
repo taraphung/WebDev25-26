@@ -8,24 +8,24 @@ function bmi(){
        let inch= parseFloat(document.getElementById("inch").value);
        let output= document.getElementById("output");
        let bmi= 703 * ((lb)/(inch*inch))
-       let msg= "";
-       let name="";
+       let status= "";
+       let filename="";
 
        if (bmi<18.5){
-              msg="underweight";
-              name= `<img src="underweight.png">`;
+              status="underweight";
+              filename= "underweight.png";
        }else if (bmi>=18.5 && bmi<=24.9){
-              msg="healthy weight";
-              name=`<img src="healthyweight.png">`;
+              status="healthy weight";
+              filename="healthyweight.png";
        }else if (bmi>=25.0 && bmi<=29.9){
-              msg="overweight";
-              name=`<img src="overweight.png">`;
-       }else{
-              msg="obese";
-              name=`<img src="obeseweight.png">`;
+              status="overweight";
+              filename="overweight.png";
+       }else if (bmi>=30){
+              status="obese";
+              filename="obeseweight.png";
        }
        
-       output.innerHTML=`${name} BMI is ${bmi.toFixed(2)}. You are ${msg}.`;
+       output.innerHTML=`<img src="${filename}"> <br> Your BMI is ${bmi.toFixed(2)}. You're ${status}.`;
 }
 
 
