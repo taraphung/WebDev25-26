@@ -22,8 +22,8 @@ function init(){
    for (let i=1; i<=5; i++){
       let price=Math.floor(Math.random()*(35-15+1)+15);
       build+=`<div class="card">
-                  <img src="images/pizza${i}.jpg" class="pizza">
                   <img src="images/title${i}.png" class="title">
+                  <img src="images/pizza${i}.jpg" class="pizza">
                   <br>$${price}
                   <input type="text" placeholder="Enter Quantity">
                   <input type="button" value="Buy">
