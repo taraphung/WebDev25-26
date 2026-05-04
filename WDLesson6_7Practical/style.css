@@ -44,8 +44,9 @@ nav a:hover{
   flex:1;
   margin:10px;
   padding:10px;
-  border:1px solid gray;
+  border:1px solid rgb(242, 40, 40);
   text-align:center;
+  color:rgb(84, 69, 173);
 }
 
 .highlight{
