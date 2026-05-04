@@ -5,39 +5,15 @@ async function init(){
   info = await fetch(link);
   data = await info.json();
   
-  let output = document.getElementById("output");
-  let build = "";
 
-  for(let i = 0; i < data.length; i+=1){
+  output = document.getElementById("output");
+  result = document.getElementById("result");
+  let build = "";
+  let ct = 0;
+
+  for(let i = 0; i < data.length; i++){
     let crash = data[i];
     build += `<div class="fitted card">
-                <h3> ID: ${crash.collision_id} </h3>
-                <p>Street Name: ${crash.on_street_name}</p>
-                <hr>
-                <p> Persons Injured: ${crash.number_of_persons_injured} </p>
-                <p> Motorists Injured: ${crash.number_of_motorist_injured} </p>
-                <hr>
-                <p>Contributing Factor: ${crash.contributing_factor_vehicle_1} </p>
-                <hr>
-                <p>Vehicle Type: ${crash.vehicle_type_code1} </p>
-              </div>`    
-  }
-  output.innerHTML = build;
-}
-
-
-function filterByStreet(){
-  let output = document.getElementById("output");
-  let street = document.getElementById("street").value;
-  let result = document.getElementById("result");
-  
-  let build = "";
-  let ct = 0;
-
-  for(let i = 0; i < data.length; i+=1){
-    let crash = data[i];
-    if(crash.on_street_name == street){
-      build += `<div class="fitted card">
                   <h3> ID: ${crash.collision_id} </h3>
                   <p>Street Name: ${crash.on_street_name}</p>
                   <hr>
@@ -47,46 +23,26 @@ function filterByStreet(){
                   <p>Contributing Factor: ${crash.contributing_factor_vehicle_1} </p>
                   <hr>
                   <p>Vehicle Type: ${crash.vehicle_type_code1} </p>
-                </div>`;
-      ct += 1;
-    }
+              </div>`;
+    ct++;
   }
-  result.innerHTML = `${ct} Results found.`
+  result.innerHTML = `${ct} Results found`;
   output.innerHTML = build;
+
+  //Dropdown Menus
+  let per = fillDropDown("persons_injured");
+  document.getElementById("per").innerHTML = per;
+
+  let vehicle = fillDropDown("vehicle_type_code1");
+  document.getElementById("vehicle").innerHTML = vehicle;
+
+  let motor = fillDropDown("motorist_injured");
+  document.getElementById("motor").innerHTML = motor;
+
+  let street = fillDropDown("on_street_name");
+  document.getElementById("street").innerHTML = street;
+ 
 }
-
-
-function filterByID(){
-  let output = document.getElementById("output");
-  let id = document.getElementById("idname").value;
-  let result = document.getElementById("result");
-  
-  let build = "";
-  let ct = 0;
-
-  for(let i = 0; i < data.length; i+=1){
-    let crash = data[i];
-    if(crash.collision_id == id){
-      build += `<div class="fitted card">
-                  <h3> ID: ${crash.collision_id} </h3>
-                  <p>Street Name: ${crash.on_street_name}</p>
-                  <hr>
-                  <p> Persons Injured: ${crash.number_of_persons_injured} </p>
-                  <p> Motorists Injured: ${crash.number_of_motorist_injured} </p>
-                  <hr>
-                  <p>Contributing Factor: ${crash.contributing_factor_vehicle_1} </p>
-                  <hr>
-                  <p>Vehicle Type: ${crash.vehicle_type_code1} </p>
-                </div>`;
-      ct += 1;
-    }
-  }
-  result.innerHTML = `${ct} Results found.`
-  output.innerHTML = build;
-}
-
-
-
 
 function filterByPerAndVehicle(){
   let per = document.getElementById("per").value;
@@ -117,15 +73,16 @@ function filterByPerAndVehicle(){
 
 
 
-function filterByIDAndCon(){
-  let id = document.getElementById("id").value;
-  let con = document.getElementById("con").value;
+
+function filterByMotorAndStreet(){
+  let motor = document.getElementById("motor").value;
+  let street = document.getElementById("street").value;
   let build = "";
   let ct = 0;
 
   for(let i = 0; i < data.length; i+=1){
     let crash = data[i];
-    if(crash.collision_id == id && crash.contributing_factor_vehicle_1 == con){
+    if(crash.number_of_motorist_injured == motor && crash.on_street_name == street){
       build += `<div class="fitted card">
                     <h3> ID: ${crash.collision_id} </h3>
                     <p>Street Name: ${crash.on_street_name}</p>
@@ -143,4 +100,3 @@ function filterByIDAndCon(){
   result.innerHTML = `${ct} Results found`;
   output.innerHTML = build;
 }
-

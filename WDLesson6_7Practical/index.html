@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>WD_6.7 Practical</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="fillDropDown.js"></script>
     <script src="script.js"></script>
    </head>
 
@@ -27,35 +28,24 @@
     <div class="container">
       <div id="leftPanel">
         <!--Card below is the basic HTML to use for Challenge 1 and 3 -->
-        <div class="card">
-          <h3>Search By Street Name</h3>
-          <input type="text" id="street" placeholder="Enter Street Name (in CAPS)">
-          <hr></hr>
-          <a class="button" onclick="filterByStreet()"> Search </a>
-        </div>
-        <div class="card">
-          <h3>Search By ID </h3>
-          <input type="text" id="idname" placeholder="Enter ID">
-          <hr></hr>
-          <a class="button" onclick="filterByID()"> Search </a>
-        </div>
-        
+      
         <div class="card">
           <h3>Search By Persons Injured and Vehicle Type </h3>
-          <p>Traverse through all the motor vehicle collisions and filter by persons injured and vehicle type.</p>
+            Traverse through all the motor vehicle collisions and filter by persons injured and vehicle type.</p>
           <input type="text" id="per" placeholder="Enter Persons Injured">
-          <input type="text" id="vehicle" placeholder="Enter Vehicle Type">
+          <select id="vehicle"></select>
           <hr></hr>
           <a class="button" onclick="filterByPerAndVehicle()"> Search </a>
         </div>
 
+
         <div class="card">
-          <h3>Search By ID and Contributing Factor</h3>
-          <p>Traverse through all the motor vehicle collisions and filter by ID and the contributing factor.</p>
-          <input type="text" id="id" placeholder="Enter ID">
-          <input type="text" id="con" placeholder="Enter Contributing Factor">
+          <h3>Search By Motorists Injured and Street Name </h3>
+            Traverse through all the motor vehicle collisions and filter by motorists injured and street name.</p>
+          <input type="text" id="motor" placeholder="Enter Motorists Injured">
+          <select id="street"></select>
           <hr></hr>
-          <a class="button" onclick="filterByIDAndCon()"> Search </a>
+          <a class="button" onclick="filterByMotorAndStreet()"> Search </a>
         </div>
 
 
