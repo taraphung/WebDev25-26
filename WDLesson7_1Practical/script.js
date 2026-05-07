@@ -5,40 +5,37 @@ function init(){
   display(`Secret number is ${secret}`);
   
   //Challenge 1: Use the function area( ) created in helper.js to display the area of any rectangle of your choice of dimensions.
-  let A= area(2 , 3.5);
-  display(`Area of rectangle is ${A}`);
-  
+  let A = area(2, 3.5);
+  display(`<h4>Challenge 1:</h4> 
+           Area of rectangle is ${A}`);
 
   //Challenge 2: Use the function celsius( ) created in helper.js to show the Celsius equivalent of any Fahrenheit temperature. 
-  let c= celsius(98.6);
-  display(`${c} deg Celsius`);
+  let C = celsius(98.6);
+  display(`<h4>Challenge 2:</h4> 
+            ${C} deg Celsius`);
 
   //Challenge 4: Set height and weight to appropriate numbers. Pass the variables as arguments to the bmi() function defined in Challenge 3.
   // Store the result in a variable called b. Display the value of b.
-  let height;
-  let weight;
-  let b;
+  let height = 75;
+  let weight = 145;
+  let b = bmi(height, weight);
+  display(`<h4>Challenge 4:</h4> 
+             BMI = ${b.toFixed(2)} <br>(ht: ${height}in & wt: ${weight}lbs)`);
 
-  height=70;
-  weight=180;
-  b=bmi(height,weight);
-  display(`Your BMI is ${b.toFixed(2)}`);
-
-  //Challenge 6:  Pass the value b from challenge 4 to the bmiCategory() function and store in a variable bc.  Display the BMI category returned by bmiCategory().
-  let bc=bmiCategory(b);
-  display(`BMI: ${b.toFixed(2)}, Category: ${bc}`);
-
+  //Challenge 6: Pass the value b from challenge 4 to the bmiCategory() function and store in a variable bc. Display the BMI category returned by bmiCategory().
+    let bc = bmiCategory(b);
+    display(`<h4>Challenge 6:</h4> 
+                BMI status: ${bc}`);
   
   //Challenge 8: Call lottery() with some number and display the results.
-  let numb=lottery(6);
-  display(`The lottery number is ${numb}`)
+  let result = lottery(6);
+  display(`<h4>Challenge 8:</h4> 
+              Lotto numbers: ${result}`);
 
-
-  //Challenge 10: Create an array survey which contains several "Y" and "N" items. Pass this survey array to the function results( ) and display the value returned.
-  let survey=["Y", "Y", "N", "Y", "Y", "N",]
-  let yes=results(survey);
-  display(`Number of Y responses: ${yes}`);
-
-  
+  //Challengen 10: Create an array survey which contains several "Y" and "N" items. Pass this survey array to the function results( ) and display the value returned.
+  let survey_results = ["Y","N","Y","N","N","Y","N","Y","N","Y","Y","N"];
+  display(`<h4>Challenge 10:</h4> 
+              # of Y responses: ${results(survey_results)}`);
 }
+
 
