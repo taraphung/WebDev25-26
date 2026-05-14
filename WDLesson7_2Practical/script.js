@@ -25,6 +25,7 @@ async function init(){
 //Challenge 8: Create a function filterByBoro() that retrieves the borough from the user via text input, filters the data and generates cards for this subset of the data.
 function filterByBoro(){
   let boro = get("borough").value;
+  let leftPanel=get("leftPanel");
   let build = "";
   
   for(let i = 0; i < data.length; i++){
